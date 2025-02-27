@@ -9,6 +9,7 @@ import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.math.MathUtil;
+import frc.robot.Constants.OIConstants;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -34,13 +35,15 @@ public class RobotContainer {
     // Configure the trigger bindings
     configureBindings();
 
-    m_robotDrive.setDefaultCommand( new RunCommand(() ->
-    m_robotDrive.drive(m_driverController.getLeftX(), m_driverController.getLeftY(), m_driverController.getRightX(), true, m_driverController.getRightY()))
-    );
-    /*m_robotDrive.setDefaultCommand(
+    
+    m_robotDrive.setDefaultCommand(
       // The left stick controls translation of the robot.
       // Turning is controlled by the X axis of the right stick.
-      new RunCommand(() -> m_robotDrive.drive(-MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband), -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband), -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband), true), m_robotDrive)); */
+      new RunCommand(() -> m_robotDrive.drive(
+        -MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband), 
+        -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband), 
+        -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband), 
+        true, 0.01), m_robotDrive )); 
 }
 
   

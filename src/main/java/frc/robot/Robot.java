@@ -6,11 +6,11 @@ package frc.robot;
 //package edu.wpi.first.wpilibj.examples.swervebot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.XboxController;
+//import edu.wpi.first.wpilibj.XboxController;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.subsystems.Drivetrain;
+//import frc.robot.subsystems.Drivetrain;
 
 
 /**
@@ -20,8 +20,8 @@ import frc.robot.subsystems.Drivetrain;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
-private final XboxController m_controller = new XboxController(1);
-private final Drivetrain m_swerve = new Drivetrain();
+//private final XboxController m_controller = new XboxController(1);
+//private final Drivetrain m_swerve = new Drivetrain();
   private final RobotContainer m_robotContainer;
 
   /**

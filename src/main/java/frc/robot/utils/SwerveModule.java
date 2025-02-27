@@ -74,7 +74,7 @@ public class SwerveModule {
       int turningEncoderChannelA,
       int turningEncoderChannelB) {
     
-    m_turningMotor = new SparkMax(2, MotorType.kBrushless);
+    m_turningMotor = new SparkMax(turningMotorChannel, MotorType.kBrushless);
     
     m_driveMotor = new SparkMax(driveMotorChannel, MotorType.kBrushless);
 
@@ -86,11 +86,11 @@ public class SwerveModule {
         .idleMode(IdleMode.kBrake)
         .smartCurrentLimit(40);
     driveConfig.encoder
-        .positionConversionFactor(1000)
-        .velocityConversionFactor(1000);
+        .positionConversionFactor(10000)
+        .velocityConversionFactor(10000);
     driveConfig.closedLoop
         .feedbackSensor(FeedbackSensor.kAbsoluteEncoder)
-        .pid(1.0, 0.0, 0.0);
+        .pid(100, 0.00, 0.00);
     
 
 
@@ -101,7 +101,7 @@ public class SwerveModule {
 
     turnConfig.closedLoop
         .feedbackSensor(FeedbackSensor.kAbsoluteEncoder)
-        .pid(0.01, 0.0, 0.0);
+        .pid(.6, 0, 0.0);
     
         
     m_driveMotor.configure(driveConfig, SparkBase.ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);

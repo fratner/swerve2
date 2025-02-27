@@ -1,0 +1,15 @@
+
+package frc.robot.subsystems;
+import frc.robot.utils.SwerveModule;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.revrobotics.spark.*;
+
+public class Elevator extends SubsystemBase
+{
+
+    private final SparkMax m_elevatorMotor;
+    private final SparkMaxConfig elevatorConfig;
+    private final Encoder m_elevatorEncoder;
+    private final SparkClosedLoopController m_elevatorPIDController;
+
+}
